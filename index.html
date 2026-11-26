@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dhruv Nimse's Portfolio">
+    <meta name="author" content="Dhruv Nimse">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'self'; frame-src 'self';">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Dhruv Nimse Portfolio</title>
+</head>
+<body>
+    <!-- Full Screen Booting Overlay -->
+    <div id="booting-overlay"> </div>
+
+    <!-- Desktop Layout -->
+    <div class="desktop">
+        <!-- Icons Section - Top Left -->
+        <div class="icons">
+            <a href="https://github.com/Dhruv12-bit" class="icon" id="github" aria-label="Open GitHub profile" target="_blank" rel="noopener noreferrer">
+                <img src="github.png" alt="GitHub">
+                <span>GitHub</span>
+            </a>
+            <a href="https://tryhackme.com/r/p/InfoSentinel" class="icon" id="thm" aria-label="Open TryHackMe profile" target="_blank" rel="noopener noreferrer">
+                <img src="thm.png" alt="THM Profile">
+                <span>THM</span>
+            </a>
+            <a href="https://www.linkedin.com/in/dhruv-dnyandev-nimse-a40490422" class="icon" id="linkedin-icon" aria-label="Open LinkedIn profile" target="_blank" rel="noopener noreferrer">
+                <img src="linkedin.png" alt="LinkedIn">
+                <span>LinkedIn</span>
+            </a>
+        </div>
+
+        <!-- Floating Dock at the Bottom -->
+        <div class="dock" role="toolbar" aria-label="Dock">
+            <div class="icon" id="terminal-icon" role="button" tabindex="0" aria-label="Open Terminal">
+                <img src="terminal.png" alt="Terminal">
+                <span>Terminal</span>
+            </div>
+            <div class="icon" id="projects-icon" role="button" tabindex="0" aria-label="Open Projects">
+                <img src="folder.png" alt="Projects">
+                <span>Projects</span>
+            </div>
+            <div class="icon" id="experience-icon" role="button" tabindex="0" aria-label="Open Experience">
+                <img src="projects.png" alt="Experience">
+                <span>Experience</span>
+            </div>
+            <div class="icon" id="certifications-icon" role="button" tabindex="0" aria-label="Open Certifications">
+                <img src="exp.png" alt="Certifications">
+                <span>Certifications</span>
+            </div>
+            <div class="icon" id="resume-icon" role="button" tabindex="0" aria-label="Open Resume">
+                <img src="resume.png" alt="Resume">
+                <span>Resume</span>
+            </div>
+        </div>
+
+        <!-- Terminal Section (Initially Hidden) -->
+        <div class="terminal" id="terminal" role="dialog" aria-modal="true" tabindex="-1">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="button yellow" id="minimize-terminal" role="button" tabindex="0" title="Minimize" aria-label="Minimize"></div>
+                    <div class="button red" id="close-terminal" role="button" tabindex="0" title="Close" aria-label="Close"></div>
+                </div>
+                <div class="terminal-prompt">
+                    <span class="prompt-text">Summary@Dhruv-Nimse:~$</span>
+                </div>
+                <div class="terminal-body">
+                    <pre id="terminal-output" aria-live="polite"><span id="terminal-text"></span><span id="terminal-cursor" class="cursor"></span></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Window -->
+        <div class="projects-window" id="projects-window" role="dialog" aria-modal="true" tabindex="-1">
+            <div class="window-header">
+                <div class="button red" id="close-projects" role="button" tabindex="0" title="Close" aria-label="Close"></div>
+                <div class="button yellow" id="minimize-projects" role="button" tabindex="0" title="Minimize" aria-label="Minimize"></div>
+                <span>Projects</span>
+            </div>
+            <div class="projects-content">
+                <!-- 1. tour-and-travel -->
+                <div class="exp-item">
+                    <button class="exp-header" type="button" aria-expanded="false" aria-controls="proj-details-travel">
+                        <span class="exp-dot" aria-hidden="true"></span>
+                        <span class="exp-heading">
+                            <span class="exp-role">Tour and Travel</span>
+                            <span class="exp-company">Vercel &middot; CSS Landing Page</span>
+                        </span>
+                        <span class="exp-meta">
+                            <span class="exp-chevron" aria-hidden="true">&#9662;</span>
+                        </span>
+                    </button>
+                    <div class="exp-details" id="proj-details-travel">
+                        <div class="detail-body">
+                            <p class="detail-desc">A travel and tour booking showcase featuring responsive card displays, itinerary details, and modern landing page styling.</p>
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                <a href="https://tour-and-travel-dhruv.vercel.app" class="exp-link" target="_blank" rel="noopener noreferrer">Live Demo &rarr;</a>
+                                <a href="https://github.com/Dhruv12-bit/Tour-and-Travel" class="exp-link" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. hand-controled-particle-system -->
+                <div class="exp-item">
+                    <button class="exp-header" type="button" aria-expanded="false" aria-controls="proj-details-particles">
+                        <span class="exp-dot" aria-hidden="true"></span>
+                        <span class="exp-heading">
+                            <span class="exp-role">Hand-Controlled Particle System</span>
+                            <span class="exp-company">Vercel &middot; Interactive Physics</span>
+                        </span>
+                        <span class="exp-meta">
+                            <span class="exp-chevron" aria-hidden="true">&#9662;</span>
+                        </span>
+                    </button>
+                    <div class="exp-details" id="proj-details-particles">
+                        <div class="detail-body">
+                            <p class="detail-desc">An interactive visual simulation where dynamic particle behavior and dispersion effects react in real time.</p>
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                <a href="https://hand-controled-particle-system.vercel.app" class="exp-link" target="_blank" rel="noopener noreferrer">Live Demo &rarr;</a>
+                                <a href="https://github.com/Dhruv12-bit/Hand-controled-particle-system" class="exp-link" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. product-cart -->
+                <div class="exp-item">
+                    <button class="exp-header" type="button" aria-expanded="false" aria-controls="proj-details-cart">
+                        <span class="exp-dot" aria-hidden="true"></span>
+                        <span class="exp-heading">
+                            <span class="exp-role">Product Cart</span>
+                            <span class="exp-company">Vercel &middot; UI / UX</span>
+                        </span>
+                        <span class="exp-meta">
+                            <span class="exp-chevron" aria-hidden="true">&#9662;</span>
+                        </span>
+                    </button>
+                    <div class="exp-details" id="proj-details-cart">
+                        <div class="detail-body">
+                            <p class="detail-desc">A structured shopping cart component featuring clean item listings, quantity controls, and checkout layout styling.</p>
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                <a href="https://product-cart-rouge-alpha.vercel.app" class="exp-link" target="_blank" rel="noopener noreferrer">Live Demo &rarr;</a>
+                                <a href="https://github.com/Dhruv12-bit/product-cart" class="exp-link" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. valorant-char -->
+                <div class="exp-item">
+                    <button class="exp-header" type="button" aria-expanded="false" aria-controls="proj-details-valorant">
+                        <span class="exp-dot" aria-hidden="true"></span>
+                        <span class="exp-heading">
+                            <span class="exp-role">Valorant Characters</span>
+                            <span class="exp-company">Vercel &middot; Web Design</span>
+                        </span>
+                        <span class="exp-meta">
+                            <span class="exp-chevron" aria-hidden="true">&#9662;</span>
+                        </span>
+                    </button>
+                    <div class="exp-details" id="proj-details-valorant">
+                        <div class="detail-body">
+                            <p class="detail-desc">A game-themed agent showcase highlighting Valorant characters, roles, and signature abilities built with CSS styling.</p>
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                <a href="https://valorant-char.vercel.app" class="exp-link" target="_blank" rel="noopener noreferrer">Live Demo &rarr;</a>
+                                <a href="https://github.com/Dhruv12-bit/valorant-char" class="exp-link" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. image-slider -->
+                <div class="exp-item">
+                    <button class="exp-header" type="button" aria-expanded="false" aria-controls="proj-details-slider">
+                        <span class="exp-dot" aria-hidden="true"></span>
+                        <span class="exp-heading">
+                            <span class="exp-role">Image Slider</span>
+                            <span class="exp-company">Vercel &middot; UI Component</span>
+                        </span>
+                        <span class="exp-meta">
+                            <span class="exp-chevron" aria-hidden="true">&#9662;</span>
+                        </span>
+                    </button>
+                    <div class="exp-details" id="proj-details-slider">
+                        <div class="detail-body">
+                            <p class="detail-desc">A carousel image slider component with smooth transitions and responsive layout integration.</p>
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                <a href="https://image-slider-dhruv.vercel.app" class="exp-link" target="_blank" rel="noopener noreferrer">Live Demo &rarr;</a>
+                                <a href="https://github.com/Dhruv12-bit/image-slider" class="exp-link" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. amazon-clone -->
+                <div class="exp-item">
+                    <button class="exp-header" type="button" aria-expanded="false" aria-controls="proj-details-amazon">
+                        <span class="exp-dot" aria-hidden="true"></span>
+                        <span class="exp-heading">
+                            <span class="exp-role">Amazon Clone</span>
+                            <span class="exp-company">Vercel &middot; Web Application</span>
+                        </span>
+                        <span class="exp-meta">
+                            <span class="exp-chevron" aria-hidden="true">&#9662;</span>
+                        </span>
+                    </button>
+                    <div class="exp-details" id="proj-details-amazon">
+                        <div class="detail-body">
+                            <p class="detail-desc">A front-end clone of the Amazon e-commerce platform replicating header search navigation, deals grid, and footer components.</p>
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                <a href="https://amazon-clone-dhruv.vercel.app" class="exp-link" target="_blank" rel="noopener noreferrer">Live Demo &rarr;</a>
+                                <a href="https://github.com/Dhruv12-bit/Amazon-clone" class="exp-link" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Window -->
+        <div class="experience-window" id="experience-window" role="dialog" aria-modal="true" tabindex="-1">
+            <div class="window-header">
+                <div class="button red" id="close-experience" role="button" tabindex="0" title="Close" aria-label="Close"></div>
+                <div class="button yellow" id="minimize-experience" role="button" tabindex="0" title="Minimize" aria-label="Minimize"></div>
+                <span>Experience</span>
+            </div>
+            <div class="experience-content">
+                <div class="exp-item">
+                    <button class="exp-header" type="button" aria-expanded="false" aria-controls="exp-details-1">
+                        <span class="exp-dot" aria-hidden="true"></span>
+                        <span class="exp-heading">
+                            <span class="exp-role">Full-Stack Web &amp; PWA Developer</span>
+                            <span class="exp-company">Freelance &middot; Self-Employed</span>
+                        </span>
+                        <span class="exp-meta">
+                            <span class="dates">2026 &ndash; Present</span>
+                            <span class="exp-chevron" aria-hidden="true">&#9662;</span>
+                        </span>
+                    </button>
+                    <div class="exp-details" id="exp-details-1">
+                        <ul>
+                            <li>Built and deployed Progressive Web Apps (PWAs) for hostel/PG management, mess operations, and multi-role gym management using React, Firebase, and Cloudflare Workers.</li>
+                            <li>Implemented role-based access control, real-time database sync, and responsive mobile-first interfaces.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="exp-item">
+                    <button class="exp-header" type="button" aria-expanded="false" aria-controls="exp-details-2">
+                        <span class="exp-dot" aria-hidden="true"></span>
+                        <span class="exp-heading">
+                            <span class="exp-role">Embedded Systems &amp; IoT Developer</span>
+                            <span class="exp-company">JSPM's JSCOE &middot; Academic &amp; Custom Builds</span>
+                        </span>
+                        <span class="exp-meta">
+                            <span class="dates">2026 &ndash; Present</span>
+                            <span class="exp-chevron" aria-hidden="true">&#9662;</span>
+                        </span>
+                    </button>
+                    <div class="exp-details" id="exp-details-2">
+                        <ul>
+                            <li>Designed microcontroller prototypes using Arduino Uno and ESP32, integrating ultrasonic, PIR, air quality (MQ-135), and optical laser telemetry sensors.</li>
+                            <li>Developed automated relay/MOSFET control systems, smart solar charging circuits, and Bluetooth/I2C LCD interfaces.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications Window -->
+        <div class="certifications-window" id="certifications-window" role="dialog" aria-modal="true" tabindex="-1">
+            <div class="window-header">
+                <div class="button red" id="close-certifications" role="button" tabindex="0" title="Close" aria-label="Close"></div>
+                <div class="button yellow" id="minimize-certifications" role="button" tabindex="0" title="Minimize" aria-label="Minimize"></div>
+                <span>Certifications</span>
+            </div>
+            <div class="certifications-content">
+                <!-- 1. HTML & CSS with AI Bootcamp -->
+                <div class="exp-item">
+                    <button class="exp-header" type="button" aria-expanded="false" aria-controls="cert-details-htmlcss">
+                        <span class="exp-dot" aria-hidden="true"></span>
+                        <span class="exp-heading">
+                            <span class="exp-role">HTML &amp; CSS with AI Bootcamp</span>
+                            <span class="exp-company">LetsUpgrade &middot; NSDC, GDG MAD &amp; ITM Edutech</span>
+                        </span>
+                        <span class="exp-meta">
+                            <span class="dates">20 Nov 2026</span>
+                            <span class="exp-chevron" aria-hidden="true">&#9662;</span>
+                        </span>
+                    </button>
+                    <div class="exp-details" id="cert-details-htmlcss">
+                        <div class="detail-body">
+                            <p class="detail-desc">Certificate ID: <strong>6ae31c5058bab6952f9ffd43</strong> &mdash; Completed the HTML &amp; CSS with AI Bootcamp covering responsive web design and AI-assisted front-end workflows.</p>
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                <a href="https://www.letsupgrade.in/verify" class="exp-link" target="_blank" rel="noopener noreferrer">Verify Credential &rarr;</a>
+                                <a href="html%20and%20css.pdf" class="exp-link" target="_blank" rel="noopener noreferrer">View Certificate PDF &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Vibe Coding: Build Faster with AI -->
+                <div class="exp-item">
+                    <button class="exp-header" type="button" aria-expanded="false" aria-controls="cert-details-vibecoding">
+                        <span class="exp-dot" aria-hidden="true"></span>
+                        <span class="exp-heading">
+                            <span class="exp-role">Vibe Coding: Build Faster with AI</span>
+                            <span class="exp-company">LetsUpgrade &middot; NSDC, GDG MAD &amp; ITM Edutech</span>
+                        </span>
+                        <span class="exp-meta">
+                            <span class="dates">13 Nov 2026</span>
+                            <span class="exp-chevron" aria-hidden="true">&#9662;</span>
+                        </span>
+                    </button>
+                    <div class="exp-details" id="cert-details-vibecoding">
+                        <div class="detail-body">
+                            <p class="detail-desc">Certificate ID: <strong>6a9be0463432ffe425175d3a</strong> &mdash; Completed Vibe Coding: Build Faster with AI, focusing on rapid AI-assisted prototyping and software development.</p>
+                            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                                <a href="https://www.letsupgrade.in/verify" class="exp-link" target="_blank" rel="noopener noreferrer">Verify Credential &rarr;</a>
+                                <a href="vibe%20coding.pdf" class="exp-link" target="_blank" rel="noopener noreferrer">View Certificate PDF &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. TryHackMe -->
+                <div class="exp-item">
+                    <button class="exp-header" type="button" aria-expanded="false" aria-controls="cert-details-thm">
+                        <span class="exp-dot" aria-hidden="true"></span>
+                        <span class="exp-heading">
+                            <span class="exp-role">Cybersecurity &amp; CTF Labs</span>
+                            <span class="exp-company">TryHackMe (InfoSentinel)</span>
+                        </span>
+                        <span class="exp-meta">
+                            <span class="dates">Active</span>
+                            <span class="exp-chevron" aria-hidden="true">&#9662;</span>
+                        </span>
+                    </button>
+                    <div class="exp-details" id="cert-details-thm">
+                        <div class="detail-body">
+                            <p class="detail-desc">Hands-on labs covering Linux fundamentals, networking, web application security, and defensive/offensive security walkthroughs.</p>
+                            <a href="https://tryhackme.com/r/p/InfoSentinel" class="exp-link" target="_blank" rel="noopener noreferrer">View Profile &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resume Window -->
+        <div class="resume-window" id="resume-window" role="dialog" aria-modal="true" tabindex="-1">
+            <div class="window-header">
+                <div class="button red" id="close-resume" role="button" tabindex="0" title="Close" aria-label="Close"></div>
+                <div class="button yellow" id="minimize-resume" role="button" tabindex="0" title="Minimize" aria-label="Minimize"></div>
+                <span>Resume</span>
+            </div>
+            <div class="resume-content">
+                <iframe src="resume.pdf" title="Dhruv Nimse Resume"></iframe>
+            </div>
+        </div>
+
+        <!-- Date and Time Display -->
+        <div class="date-time" id="date-time" aria-hidden="true"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
